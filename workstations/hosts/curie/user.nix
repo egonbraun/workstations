@@ -2,18 +2,33 @@
 let
     params = specialArgs.systemParams;
     systemRole = params.system.role;
+    userEmail = params.user.email;
     userId = params.user.id;
+    userLanguage = params.user.language;
+    userName = params.user.name;
 in
 {
     imports = [
-        ../../common/programs
-        ../../users/${ userId }/user.nix
+        ../../../common/programs
     ];
 
     manual.manpages.enable = true;
 
+    home = {
+        homeDirectory = "/Users/${ userId }";
+        language.base = userLanguage;
+        stateVersion = "24.05";
+        username = userId;
+    };
+
     home.file = {
         ".hushlogin".text = "";
+
+        ".aws/config".text = ''
+        [default]
+        region = eu-central-1
+        output = json
+        '';
     };
 
     home.packages = with pkgs; [
@@ -54,6 +69,29 @@ in
         zoxide.enable = true;
         zsh.enable = true;
         wezterm.enable = true;
+
+        git = {
+            includes = [
+                {
+                    condition = "gitdir:~/SourceCode/github.com/egonbraun/";
+                    contents = {
+                        user = {
+                            name = userName;
+                            email = userEmail;
+                        };
+                    };
+                }
+                {
+                    condition = "gitdir:~/SourceCode/github.com/mundoalem/";
+                    contents = {
+                        user = {
+                            name = userName;
+                            email = userEmail;
+                        };
+                    };
+                }
+            ];
+        };
     };
 
     services = {

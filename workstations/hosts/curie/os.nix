@@ -1,37 +1,59 @@
-{ config, lib, pkgs, specialArgs, ... }:
+{ config, inputs, lib, pkgs, specialArgs, ... }:
 let
     params = specialArgs.systemParams;
-    userTimezone = params.user.timezone;
+    hostName = params.system.hostName;
+    platform = params.system.platform;
+    systemRole = params.system.role;
     userId = params.user.id;
 in
 {
+    imports = [
+        ../../users/${ userId }/os.nix
+    ];
+
+    environment.shells = with pkgs; [ zsh ];
+    networking.computerName = hostName;
     security.pam.enableSudoTouchIdAuth = true;
     time.timeZone = userTimezone;
+
+    fonts = {
+        packages = with pkgs; [
+            (nerdfonts.override { fonts = [ "InconsolataLGC" ]; })
+        ];
+    };
 
     homebrew = {
         enable = true;
 
         casks = [
             "alfred"
+            "bartender"
             "discord"
             "elgato-control-center"
             "elgato-stream-deck"
             "figma"
+            "google-chrome@dev"
+            "gpg-suite-no-mail"
+            "logi-options+"
             "loopback"
             "obs"
             "protonvpn"
             "protonmail-bridge"
             "rectangle-pro"
             "remarkable"
+            "session-manager-plugin"
             "spotify"
             "telegram"
             "whatsapp"
+            "zen-browser"
         ];
 
         masApps = {
-            "System Color Picker" = 1545870783;
-            "Logic Pro" = 634148309;
+            "Affinity Designer 2" = 1616831348;
             "HotKey App" = 975890633;
+            "System Color Picker" = 1545870783;
+            "Xcode" = 497799835;
+            "Logic Pro" = 634148309;
         };
     };
 
@@ -145,4 +167,6 @@ in
         home = "/Users/${ userId }";
         shell = pkgs.zsh;
     };
+
 }
+
