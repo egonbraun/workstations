@@ -9,7 +9,7 @@ let
 in
 {
     imports = [
-        ../../../common/programs
+        ../../common/programs
     ];
 
     manual.manpages.enable = true;

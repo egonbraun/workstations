@@ -5,12 +5,9 @@ let
     platform = params.system.platform;
     systemRole = params.system.role;
     userId = params.user.id;
+    userTimezone = params.user.timezone;
 in
 {
-    imports = [
-        ../../users/${ userId }/os.nix
-    ];
-
     environment.shells = with pkgs; [ zsh ];
     networking.computerName = hostName;
     security.pam.enableSudoTouchIdAuth = true;
