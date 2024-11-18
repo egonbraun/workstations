@@ -1,0 +1,23 @@
+#
+# GENERAL
+#
+
+.DS_Store
+
+#
+# ANSIBLE
+#
+
+.ansible_vault_password
+
+#
+# HOMEBREW
+#
+
+Brewfile.default.lock.json
+
+#
+# NIX
+#
+
+result
