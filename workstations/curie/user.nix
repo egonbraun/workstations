@@ -32,6 +32,7 @@ in
     };
 
     home.packages = with pkgs; [
+        devbox
         colima
         docker-client
         git-crypt
