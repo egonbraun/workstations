@@ -86,7 +86,6 @@ in
                 "/Applications/Affinity Designer 2.app"
                 "/Applications/OBS.app"
                 "/Applications/Logic Pro.app"
-                "/Applications/Spotify.app"
                 "/Applications/WhatsApp.app"
                 "/Applications/Telegram.app"
                 "/Applications/Discord.app"
