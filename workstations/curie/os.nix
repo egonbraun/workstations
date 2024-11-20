@@ -1,11 +1,11 @@
 { config, inputs, lib, pkgs, specialArgs, ... }:
 let
-    params = specialArgs.systemParams;
-    hostName = params.system.hostName;
-    platform = params.system.platform;
-    systemRole = params.system.role;
-    userId = params.user.id;
-    userTimezone = params.user.timezone;
+    args = specialArgs.workstationArgs;
+    hostName = args.system.hostName;
+    platform = args.system.platform;
+    systemRole = args.system.role;
+    userId = args.user.id;
+    userTimezone = args.user.timezone;
 in
 {
     environment.shells = with pkgs; [ zsh ];

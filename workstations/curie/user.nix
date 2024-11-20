@@ -1,11 +1,11 @@
 { config, lib, pkgs, specialArgs, ... }:
 let
-    params = specialArgs.systemParams;
-    systemRole = params.system.role;
-    userEmail = params.user.email;
-    userId = params.user.id;
-    userLanguage = params.user.language;
-    userName = params.user.name;
+    args = specialArgs.workstationArgs;
+    systemRole = args.system.role;
+    userEmail = args.user.email;
+    userId = args.user.id;
+    userLanguage = args.user.language;
+    userName = args.user.name;
 in
 {
     imports = [

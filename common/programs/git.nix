@@ -1,8 +1,9 @@
 { config, lib, pkgs, specialArgs, ... }:
 
 let
-    userEmail = specialArgs.systemParams.user.email;
-    userName = specialArgs.systemParams.user.name;
+    args = specialArgs.workstationArgs;
+    userEmail = args.user.email;
+    userName = args.user.name;
 in {
     programs.git = {
         enable = true;

@@ -51,36 +51,36 @@
                 system.stateVersion = 5;
             };
 
-        curieHostArgs = import ./secrets/curie.args.nix;
+        curieArgs = import ./secrets/curie.args.nix;
 
         # ----------------------------------------------------------------------
         # FUNCTIONS
         # ----------------------------------------------------------------------
 
         mkMacWorkstation =
-            params:
+            args:
             nix-darwin.lib.darwinSystem {
-                system = params.system.platform;
+                system = args.system.platform;
 
                 specialArgs = {
                     inherit inputs;
-                    systemParams = params;
+                    workstationArgs = args;
                 };
 
                 modules = [
                     defaultConfiguration
 
-                    ./workstations/${ params.system.hostName }/os.nix
+                    ./workstations/${ args.system.hostName }/os.nix
 
                     home-manager.darwinModules.home-manager
                     {
                         home-manager = {
                             backupFileExtension = "bkp";
-                            users."${ params.user.id }" = import ./workstations/${ params.system.hostName }/user.nix;
+                            users."${ args.user.id }" = import ./workstations/${ args.system.hostName }/user.nix;
 
                             extraSpecialArgs = {
                                 inherit inputs;
-                                systemParams = params;
+                                workstationArgs = args;
                             };
                         };
                     }
@@ -91,7 +91,7 @@
                             enable = true;
                             autoMigrate = true;
                             enableRosetta = true;
-                            user = "${ params.user.id }";
+                            user = "${ args.user.id }";
 
                             taps = {
                                 "homebrew/homebrew-core" = homebrew-core;
@@ -100,7 +100,7 @@
                         };
                     }
                 ]
-                ++ params.extraModules;
+                ++ args.extraModules;
             };
 
         # ----------------------------------------------------------------------
@@ -112,7 +112,7 @@
         # ----------------------------------------------------------------------
 
         darwinConfigurations = {
-            "curie" = mkMacWorkstation curieHostArgs;
+            "curie" = mkMacWorkstation curieArgs;
         };
 
         # ----------------------------------------------------------------------
