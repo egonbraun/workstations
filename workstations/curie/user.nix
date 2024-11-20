@@ -48,6 +48,7 @@ in
     ];
 
     home.sessionVariables = {
+        DEVBOX_NO_PROMPT = 1;
         EDITOR = "vim";
         HOMEBREW_NO_ANALYTICS = 1;
         HOMEBREW_NO_ENV_HINTS = 1;
