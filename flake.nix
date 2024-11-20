@@ -57,7 +57,7 @@
         # FUNCTIONS
         # ----------------------------------------------------------------------
 
-        mkDarwinSystem =
+        mkMacWorkstation =
             params:
             nix-darwin.lib.darwinSystem {
                 system = params.system.platform;
@@ -112,7 +112,7 @@
         # ----------------------------------------------------------------------
 
         darwinConfigurations = {
-            "curie" = mkDarwinSystem curieHostArgs;
+            "curie" = mkMacWorkstation curieHostArgs;
         };
 
         # ----------------------------------------------------------------------
