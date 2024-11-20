@@ -162,6 +162,5 @@ in
         home = "/Users/${ userId }";
         shell = pkgs.zsh;
     };
-
 }
 
