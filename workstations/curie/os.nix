@@ -39,7 +39,6 @@ in
             "rectangle-pro"
             "remarkable"
             "session-manager-plugin"
-            "spotify"
             "telegram"
             "whatsapp"
             "zen-browser"
