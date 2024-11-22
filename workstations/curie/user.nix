@@ -36,6 +36,7 @@ in
         colima
         docker-client
         git-crypt
+        go-task
     ];
 
     home.shellAliases = {
