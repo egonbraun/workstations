@@ -12,7 +12,7 @@ with lib;
             character = {
                 success_symbol = "[>](bold green)";
                 error_symbol = "[x](bold red)";
-                vimcmd_symbol = "[<](bold green)";
+                vimcmd_symbol = "[>](bold blue)";
             };
 
             custom = {
