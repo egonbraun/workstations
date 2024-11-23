@@ -27,7 +27,6 @@ with lib;
                 "$git_branch"
                 "$git_status"
                 "\${custom.devbox}"
-                "$cmd_duration"
                 "$line_break"
                 "$character"
             ];
