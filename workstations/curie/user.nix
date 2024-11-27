@@ -45,6 +45,7 @@ in
     };
 
     home.sessionPath = [
+        "$HOME/.local/bin"
         ".git/safe/../../bin"
     ];
 
@@ -69,6 +70,7 @@ in
         neovim.enable = true;
         ripgrep.enable = true;
         starship.enable = true;
+        vscode.enable = true;
         zoxide.enable = true;
         zsh.enable = true;
         wezterm.enable = true;
