@@ -79,12 +79,6 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 -- Exit terminal mode in the builtin terminal with an easier shortcut
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
--- Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!"<CR>')
-
 -- Window navigation
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
@@ -395,49 +389,46 @@ require("lazy").setup({
 
             capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-            -- Language Servers
-            --
-            --  Add any additional override configuration in the following tables. Available keys are:
-            --    - cmd (table): Override the default command used to start the server
-            --    - filetypes (table): Override the default list of associated filetypes for the server
-            --    - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
-            --    - settings (table): Override the default settings passed when initializing the server.
-            --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-
-            local servers = {
-                clangd = {},
-                gopls = {},
-
-                lua_ls = {
-                    settings = {
-                        Lua = {
-                            completion = {
-                                callSnippet = "Replace",
-                            },
-                            -- diagnostics = { disable = { 'missing-fields' } },
-                        },
-                    },
-                },
-
-                pyright = {},
-                ts_ls = {},
-            }
-
             --  To check the current status of installed tools and/or manually install
             --  other tools, you can run
             --    :Mason
             require("mason").setup()
+            require("mason-lspconfig").setup({ automatic_installation = false })
 
-            require("mason-lspconfig").setup({
-                handlers = {
-                    function(server_name)
-                        local server = servers[server_name] or {}
-                        -- This handles overriding only values explicitly passed
-                        -- by the server configuration above. Useful when disabling
-                        -- certain features of an LSP (for example, turning off formatting for ts_ls)
-                        server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-                        require("lspconfig")[server_name].setup(server)
-                    end,
+            -- Go
+            require("lspconfig").gopls.setup({})
+
+            -- Nix
+            require("lspconfig").nixd.setup({})
+
+            -- Python
+            require("lspconfig").pyright.setup({
+                settings = {
+                    python = {
+                        analysis = {
+                            diagnosticMode = "workspace",
+                            typeCheckingMode = "strict",
+                            useLibraryCodeForTypes = true,
+                            venvPath = ".venv",
+                        },
+                    },
+                },
+            })
+
+            -- Zig
+            require("lspconfig").zls.setup({})
+
+            -- Lua
+            require("lspconfig").lua_ls.setup({
+                settings = {
+                    Lua = {
+                        completion = {
+                            callSnippet = "Replace",
+                        },
+                        hint = {
+                            enable = true,
+                        },
+                    },
                 },
             })
         end,
@@ -484,9 +475,10 @@ require("lazy").setup({
             end,
 
             formatters_by_ft = {
+                go = { "goimports", "gofmt" },
                 lua = { "stylua" },
-                -- Conform can also run multiple formatters sequentially
-                -- python = { "isort", "black" },
+                python = { "ruff_fix", "ruff_format" },
+                ["_"] = { "trim_whitespace" },
                 --
                 -- You can use 'stop_after_first' to run the first available formatter from the list
                 -- javascript = { "prettierd", "prettier", stop_after_first = true },
@@ -512,12 +504,12 @@ require("lazy").setup({
                     -- `friendly-snippets` contains a variety of premade snippets.
                     --    See the README about individual language/framework/plugin snippets:
                     --    https://github.com/rafamadriz/friendly-snippets
-                    -- {
-                    --   'rafamadriz/friendly-snippets',
-                    --   config = function()
-                    --     require('luasnip.loaders.from_vscode').lazy_load()
-                    --   end,
-                    -- },
+                    {
+                        "rafamadriz/friendly-snippets",
+                        config = function()
+                            require("luasnip.loaders.from_vscode").lazy_load()
+                        end,
+                    },
                 },
             },
 
@@ -590,7 +582,7 @@ require("lazy").setup({
                     end, { "i", "s" }),
                 }),
 
-                sources = {
+                sources = cmp.config.sources({
                     {
                         name = "lazydev",
                         group_index = 0,
@@ -598,7 +590,9 @@ require("lazy").setup({
                     { name = "nvim_lsp" },
                     { name = "luasnip" },
                     { name = "path" },
-                },
+                }, {
+                    { name = "buffer" },
+                }),
             })
         end,
     },
@@ -675,12 +669,14 @@ require("lazy").setup({
             ensure_installed = {
                 "bash",
                 "c",
+                "cpp",
                 "diff",
                 "html",
                 "lua",
                 "luadoc",
                 "markdown",
                 "markdown_inline",
+                "python",
                 "query",
                 "vim",
                 "vimdoc",

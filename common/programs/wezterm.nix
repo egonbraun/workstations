@@ -1,10 +1,14 @@
-{ config, lib, pkgs, ... }:
 {
-    programs.wezterm = {
-        enableZshIntegration = true;
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  programs.wezterm = {
+    enableZshIntegration = true;
 
-        extraConfig = ''
-            ${ builtins.readFile ../../files/wezterm/wezterm.lua }
-        '';
-    };
+    extraConfig = ''
+      ${builtins.readFile ../../files/wezterm/wezterm.lua}
+    '';
+  };
 }

@@ -1,7 +1,10 @@
-{ config, lib, pkgs, ... }:
 {
-    programs.fd = {
-        extraOptions = [];
-    };
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  programs.fd = {
+    extraOptions = [];
+  };
 }
-

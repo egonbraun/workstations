@@ -1,6 +1,10 @@
-{ config, lib, pkgs, ... }:
 {
-    programs.lsd = {
-        enableAliases = true;
-    };
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  programs.lsd = {
+    enableAliases = true;
+  };
 }
