@@ -48,7 +48,7 @@
       system.stateVersion = 5;
     };
 
-    curieArgs = import ./secrets/curie.args.nix;
+    personalArgs = import ./secrets/personal.args.nix;
 
     # ----------------------------------------------------------------------
     # FUNCTIONS
@@ -99,19 +99,9 @@
           ]
           ++ args.extraModules;
       };
-    # ----------------------------------------------------------------------
   in {
-    # ----------------------------------------------------------------------
-    # SYSTEMS
-    # ----------------------------------------------------------------------
-
     darwinConfigurations = {
-      "curie" = mkMacWorkstation curieArgs;
+      "personal" = mkMacWorkstation personalArgs;
     };
-
-    # ----------------------------------------------------------------------
-
-    # TODO: Is this necessary? If yes, how to make it dynamic?
-    darwinPackages = self.darwinConfigurations."curie".pkgs;
   };
 }
