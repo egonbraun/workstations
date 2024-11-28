@@ -78,7 +78,7 @@ task deploy WORKSTATION=name
 
 ### Release
 
-Release a new version of the project in GitHub.
+Release a new version of the project to GitHub.
 
 ```sh
 task release
@@ -90,7 +90,6 @@ You can also create a `.env` file containing the value of the WORKSTATION
 variable, like this:
 
 ```
-# File: .env
 WORKSTATION=example
 ```
 
@@ -102,3 +101,7 @@ the `WORKSTATION` variable all the time.
 As you might have guessed, the files under the `secrets/` are encrypted so we
 don't leak any sensitive data. We achieve that by means of [git-crypt](https://github.com/AGWA/git-crypt).
 Please, make sure you have it installed so the encryption process works.
+
+## License
+
+This project is licensed under the [GNU General Public License Version 3](https://github.com/egonbraun/workstations/blob/main/LICENSE).
