@@ -40,6 +40,7 @@ in {
     devbox
     colima
     docker-client
+    gh
     git-crypt
     go-task
   ];
