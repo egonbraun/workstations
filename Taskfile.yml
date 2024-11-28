@@ -4,15 +4,32 @@ dotenv:
   - ".env"
 
 tasks:
-  lint:
-    label: Lint
-    desc: Lint
+  build:
+    label: Build
+    desc: Only builds the configuration
+    requires:
+      vars:
+        - WORKSTATION
     cmds:
-      - alejandra .
+      - nix run nix-darwin -- build --flake ".#{{.WORKSTATION}}"
   deploy:
     label: Deploy
-    desc: Deploy a workstation
-    vars:
-      WORKSTATION: "{{.WORKSTATION}}"
+    desc: Deploy the configuration to your workstation
+    requires:
+      vars:
+        - WORKSTATION
     cmds:
       - nix run nix-darwin -- switch --flake ".#{{.WORKSTATION}}"
+  lint:
+    label: Lint
+    desc: Lints and formats the nix source code
+    cmds:
+      - alejandra .
+  release:
+    label: Release
+    desc: Release a new version of the project to GitHub
+    requires:
+      vars:
+        - TAG
+    cmds:
+      - gh release create --generate-notes "{{.TAG}}"
