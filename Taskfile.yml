@@ -13,6 +13,6 @@ tasks:
     label: Deploy
     desc: Deploy a workstation
     vars:
-      WORKSTATION: '{{.WORKSTATION | default "personal"}}'
+      WORKSTATION: "{{.WORKSTATION}}"
     cmds:
       - nix run nix-darwin -- switch --flake ".#{{.WORKSTATION}}"
