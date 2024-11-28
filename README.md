@@ -5,10 +5,10 @@ and [home-manager](https://github.com/nix-community/home-manager).
 
 ## Project Structure
 
-- `common`: lib modules that can be imported from the workstation configuration
-- `files`: files that are not nix source
-- `secrets`: workstation argument files
-- `workstations`: per workstation nix configuration
+- `common/`: lib modules that can be imported from the workstation configuration
+- `files/`: files that are not nix source
+- `secrets/`: workstation argument files
+- `workstations/`: per workstation nix configuration
 - `flake.nix`: the nix flake definition file
 
 So, to add a new workstation we just need to add a new argument file, let's
