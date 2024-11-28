@@ -54,7 +54,7 @@ This project uses [Task](https://taskfile.dev/) as a project task runner.
 
 ### Lint
 
-Lints and formats the nix source code.
+Lints and formats the nix source code using [alejandra](https://github.com/kamadorueda/alejandra).
 
 ```sh
 task lint
@@ -78,7 +78,7 @@ task deploy WORKSTATION=name
 
 ### Release
 
-Release a new version of the project to GitHub.
+Release a new version of the project to GitHub using the [gh](https://cli.github.com/) tool.
 
 ```sh
 task release
