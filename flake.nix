@@ -67,13 +67,13 @@
           [
             defaultConfiguration
 
-            ./workstations/${args.system.hostName}/os.nix
+            ./workstations/${args.name}/os.nix
 
             home-manager.darwinModules.home-manager
             {
               home-manager = {
                 backupFileExtension = "bkp";
-                users."${args.user.id}" = import ./workstations/${args.system.hostName}/user.nix;
+                users."${args.user.id}" = import ./workstations/${args.name}/user.nix;
 
                 extraSpecialArgs = {
                   inherit inputs;

@@ -9,7 +9,6 @@
   args = specialArgs.workstationArgs;
   hostName = args.system.hostName;
   platform = args.system.platform;
-  systemRole = args.system.role;
   userId = args.user.id;
   userTimezone = args.user.timezone;
 in {
