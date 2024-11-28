@@ -1,0 +1,26 @@
+name: Pipeline
+
+on:
+  pull_request:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Prepare
+        uses: mundoalem/action-prepare@v1
+        with:
+          type: nix
+          job: ci
+
+      - name: Lint
+        run: |
+          task lint
