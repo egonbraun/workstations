@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "aaron-bond.better-comments",
+    "bbenoist.Nix",
+    "EditorConfig.EditorConfig",
+    "jetpack-io.devbox",
+    "kamadorueda.alejandra",
+    "redhat.vscode-yaml",
+    "yzhang.markdown-all-in-one"
+  ]
+}
