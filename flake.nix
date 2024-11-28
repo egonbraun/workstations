@@ -37,9 +37,6 @@
     homebrew-core,
     ...
   } @ inputs: let
-    # ----------------------------------------------------------------------
-    # VARIABLES
-    # ----------------------------------------------------------------------
     defaultConfiguration = {pkgs, ...} @ inputs: {
       nix.package = pkgs.nix;
       nix.settings.experimental-features = "nix-command flakes";
@@ -49,10 +46,6 @@
     };
 
     personalArgs = import ./secrets/personal.args.nix;
-
-    # ----------------------------------------------------------------------
-    # FUNCTIONS
-    # ----------------------------------------------------------------------
 
     mkMacWorkstation = args:
       nix-darwin.lib.darwinSystem {
