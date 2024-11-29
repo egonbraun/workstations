@@ -1,5 +1,7 @@
 # Workstations
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/egonbraun/workstations/pipeline.yml)
+
 My workstations configuration using [nix](https://nixos.org/), [nix-darwin](https://github.com/LnL7/nix-darwin)
 and [home-manager](https://github.com/nix-community/home-manager).
 
