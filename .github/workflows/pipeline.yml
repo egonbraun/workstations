@@ -10,6 +10,7 @@ on:
 jobs:
   ci:
     name: CI
+    environment: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,5 +23,7 @@ jobs:
           job: ci
 
       - name: Lint
+        env:
+          ALEJANDRA_ARGS: ${{ vars.ALEJANDRA_ARGS }}
         run: |
           task lint
