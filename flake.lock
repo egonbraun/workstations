@@ -201,6 +201,22 @@
         "type": "github"
       }
     },
+    "homebrew-bundle": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1732668479,
+        "narHash": "sha256-KZWR96iHkHmGpBMolWAbSMzkJ8XLFNaHwiNPxvjeXe4=",
+        "owner": "homebrew",
+        "repo": "homebrew-bundle",
+        "rev": "1419e23ebf58fdcf9f39db0da78e8026e23c0788",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "repo": "homebrew-bundle",
+        "type": "github"
+      }
+    },
     "homebrew-cask": {
       "flake": false,
       "locked": {
@@ -395,6 +411,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "homebrew-bundle": "homebrew-bundle",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
