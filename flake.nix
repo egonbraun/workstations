@@ -46,6 +46,7 @@
     };
 
     personalArgs = import ./secrets/personal.args.nix;
+    workArgs = import ./secrets/work.args.nix;
 
     mkMacWorkstation = args:
       nix-darwin.lib.darwinSystem {
@@ -95,6 +96,7 @@
   in {
     darwinConfigurations = {
       "personal" = mkMacWorkstation personalArgs;
+      "work" = mkMacWorkstation workArgs;
     };
   };
 }
