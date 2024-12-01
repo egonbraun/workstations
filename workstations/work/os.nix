@@ -35,8 +35,8 @@ in {
       "logi-options+"
       "protonmail-bridge"
       "rectangle-pro"
-      "remarkable"
       "session-manager-plugin"
+      "slack"
       "telegram"
       "visual-studio-code"
       "whatsapp"
@@ -46,6 +46,7 @@ in {
     masApps = {
       "HotKey App" = 975890633;
       "Xcode" = 497799835;
+      "reMarkable desktop" = 1276493162;
     };
   };
 
@@ -79,9 +80,13 @@ in {
         "/System/Applications/Calendar.app"
         "/Applications/Visual\ Studio\ Code.app"
         "/Applications/Xcode.app"
+        "/Applications/Slack.app"
         "/Applications/WhatsApp.app"
+        "/Applications/Microsoft\ Teams.app"
         "/Applications/Telegram.app"
         "/Applications/Discord.app"
+        "/Applications/Cisco/Cisco\ Secure\ Client.app"
+        "/Applications/Ivanti\ Secure\ Access.app"
       ];
 
       persistent-others = [

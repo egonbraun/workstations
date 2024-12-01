@@ -6,6 +6,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
     homebrew-cask = {
       url = "github:homebrew/homebrew-cask";
       flake = false;
@@ -33,6 +37,7 @@
     nix-homebrew,
     nixpkgs,
     home-manager,
+    homebrew-bundle,
     homebrew-cask,
     homebrew-core,
     ...
@@ -82,9 +87,11 @@
                 enable = true;
                 autoMigrate = true;
                 enableRosetta = true;
+                mutableTaps = false;
                 user = "${args.user.id}";
 
                 taps = {
+                  "homebrew/homebrew-bundle" = homebrew-bundle;
                   "homebrew/homebrew-core" = homebrew-core;
                   "homebrew/homebrew-cask" = homebrew-cask;
                 };

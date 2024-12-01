@@ -41,7 +41,6 @@ in {
       "protonvpn"
       "protonmail-bridge"
       "rectangle-pro"
-      "remarkable"
       "session-manager-plugin"
       "telegram"
       "visual-studio-code"
@@ -52,6 +51,7 @@ in {
     masApps = {
       "Affinity Designer 2" = 1616831348;
       "HotKey App" = 975890633;
+      "reMarkable desktop" = 1276493162;
       "System Color Picker" = 1545870783;
       "Xcode" = 497799835;
       "Logic Pro" = 634148309;
