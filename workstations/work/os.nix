@@ -30,18 +30,13 @@ in {
       "alfred"
       "bartender"
       "discord"
-      "elgato-control-center"
-      "elgato-stream-deck"
-      "figma"
       "google-chrome@dev"
       "gpg-suite-no-mail"
       "logi-options+"
-      "loopback"
-      "obs"
-      "protonvpn"
       "protonmail-bridge"
       "rectangle-pro"
       "session-manager-plugin"
+      "slack"
       "telegram"
       "visual-studio-code"
       "whatsapp"
@@ -49,12 +44,9 @@ in {
     ];
 
     masApps = {
-      "Affinity Designer 2" = 1616831348;
       "HotKey App" = 975890633;
-      "reMarkable desktop" = 1276493162;
-      "System Color Picker" = 1545870783;
       "Xcode" = 497799835;
-      "Logic Pro" = 634148309;
+      "reMarkable desktop" = 1276493162;
     };
   };
 
@@ -88,13 +80,13 @@ in {
         "/System/Applications/Calendar.app"
         "/Applications/Visual\ Studio\ Code.app"
         "/Applications/Xcode.app"
-        "/Applications/Figma.app"
-        "/Applications/Affinity Designer 2.app"
-        "/Applications/OBS.app"
-        "/Applications/Logic Pro.app"
+        "/Applications/Slack.app"
         "/Applications/WhatsApp.app"
+        "/Applications/Microsoft\ Teams.app"
         "/Applications/Telegram.app"
         "/Applications/Discord.app"
+        "/Applications/Cisco/Cisco\ Secure\ Client.app"
+        "/Applications/Ivanti\ Secure\ Access.app"
       ];
 
       persistent-others = [
