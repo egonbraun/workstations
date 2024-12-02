@@ -88,7 +88,11 @@ in {
           contents = {
             user = {
               name = userName;
-              email = userEmail;
+              email = "egon@mundoalem.io";
+            };
+
+            core = {
+              sshCommand = "ssh -i ~/.ssh/ssh-personal-private-rsa";
             };
           };
         }
@@ -97,7 +101,63 @@ in {
           contents = {
             user = {
               name = userName;
+              email = "egon@mundoalem.io";
+            };
+
+            core = {
+              sshCommand = "ssh -i ~/.ssh/ssh-personal-private-rsa";
+            };
+          };
+        }
+        {
+          condition = "gitdir:~/SourceCode/github.com/devolksbank-ep/";
+          contents = {
+            user = {
+              name = userName;
+              email = "egon.braun@devolksbank.nl";
+            };
+
+            core = {
+              sshCommand = "ssh -i ~/.ssh/ssh-devolksbank-private-rsa";
+            };
+          };
+        }
+        {
+          condition = "gitdir:~/SourceCode/gitlab.com/devolksbank/";
+          contents = {
+            user = {
+              name = userName;
+              email = "egon.braun@devolksbank.nl";
+            };
+
+            core = {
+              sshCommand = "ssh -i ~/.ssh/ssh-schubergphilis-private-rsa";
+            };
+          };
+        }
+        {
+          condition = "gitdir:~/SourceCode/github.com/sbpdvb/";
+          contents = {
+            user = {
+              name = userName;
               email = userEmail;
+            };
+
+            core = {
+              sshCommand = "ssh -i ~/.ssh/ssh-schubergphilis-private-rsa";
+            };
+          };
+        }
+        {
+          condition = "gitdir:~/SourceCode/github.com/schubergphilis/";
+          contents = {
+            user = {
+              name = userName;
+              email = userEmail;
+            };
+
+            core = {
+              sshCommand = "ssh -i ~/.ssh/ssh-schubergphilis-private-rsa";
             };
           };
         }

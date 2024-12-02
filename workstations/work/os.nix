@@ -45,7 +45,6 @@ in {
 
     masApps = {
       "HotKey App" = 975890633;
-      "Xcode" = 497799835;
       "reMarkable desktop" = 1276493162;
     };
   };
@@ -62,7 +61,7 @@ in {
     dock = {
       autohide = true;
       autohide-time-modifier = 0.0;
-      largesize = 32;
+      largesize = 48;
       magnification = true;
       mineffect = "scale";
       minimize-to-application = true;
@@ -85,6 +84,8 @@ in {
         "/Applications/Microsoft\ Teams.app"
         "/Applications/Telegram.app"
         "/Applications/Discord.app"
+        "/Applications/1Password.app"
+        "/Applications/Windows\ App.app"
         "/Applications/Cisco/Cisco\ Secure\ Client.app"
         "/Applications/Ivanti\ Secure\ Access.app"
       ];
