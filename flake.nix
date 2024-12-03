@@ -3,13 +3,14 @@
 
   inputs = {
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
     homebrew-bundle = {
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
+
     homebrew-cask = {
       url = "github:homebrew/homebrew-cask";
       flake = false;
@@ -21,7 +22,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
