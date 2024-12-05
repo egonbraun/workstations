@@ -51,6 +51,7 @@ in {
   };
 
   home.sessionPath = [
+    "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
     "$HOME/.local/bin"
     ".git/safe/../../bin"
     ".venv/bin"
