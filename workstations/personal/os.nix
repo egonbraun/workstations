@@ -85,6 +85,7 @@ in {
         "/Applications/Google\ Chrome\ Dev.app"
         "/System/Applications/Mail.app"
         "/System/Applications/Calendar.app"
+        "/Users/${userId}/Applications/Home\ Manager\ Apps/kitty.app"
         "/Applications/Visual\ Studio\ Code.app"
         "/Applications/Xcode.app"
         "/Applications/Figma.app"
