@@ -70,13 +70,13 @@ in {
       show-recents = false;
 
       persistent-apps = [
-        "/Users/${userId}/.nix-profile/Applications/WezTerm.app"
         "/System/Applications/Notes.app"
         "/System/Applications/Reminders.app"
         "/Applications/Zen\ Browser.app"
         "/Applications/Google\ Chrome\ Dev.app"
         "/System/Applications/Mail.app"
         "/System/Applications/Calendar.app"
+        "/Users/${userId}/Applications/Home\ Manager\ Apps/kitty.app"
         "/Applications/Visual\ Studio\ Code.app"
         "/Applications/Xcode.app"
         "/Applications/Slack.app"
