@@ -14,7 +14,7 @@ config.window_close_confirmation = "NeverPrompt"
 -- ----------------------------------------------------------------------------
 
 config.font = wezterm.font("Inconsolata LGC Nerd Font")
-config.font_size = 12.0
+config.font_size = 14.0
 
 config.adjust_window_size_when_changing_font_size = false
 config.allow_square_glyphs_to_overflow_width = "WhenFollowedBySpace"
@@ -58,9 +58,9 @@ end
 
 config.color_scheme = "Dracula"
 config.hide_tab_bar_if_only_one_tab = true
-config.tab_bar_at_bottom = true
+config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.95
 config.window_decorations = "RESIZE"
 
 config.inactive_pane_hsb = {

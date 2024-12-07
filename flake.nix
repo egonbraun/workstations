@@ -43,9 +43,14 @@
     homebrew-core,
     ...
   } @ inputs: let
-    defaultConfiguration = {pkgs, ...} @ inputs: {
+    defaultConfiguration = {
+      pkgs,
+      specialArgs,
+      ...
+    } @ inputs: {
       nix.package = pkgs.nix;
       nix.settings.experimental-features = "nix-command flakes";
+      nix.settings.trusted-users = ["root" specialArgs.workstationArgs.user.id];
       services.nix-daemon.enable = true;
       system.configurationRevision = self.rev or self.dirtyRev or null;
       system.stateVersion = 5;

@@ -73,6 +73,7 @@ in {
     git.enable = true;
     home-manager.enable = true;
     jq.enable = true;
+    kitty.enable = true;
     lazygit.enable = true;
     lsd.enable = true;
     neovim.enable = true;
@@ -80,7 +81,6 @@ in {
     starship.enable = true;
     zoxide.enable = true;
     zsh.enable = true;
-    wezterm.enable = true;
 
     git = {
       includes = [

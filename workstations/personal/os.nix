@@ -70,7 +70,7 @@ in {
     dock = {
       autohide = true;
       autohide-time-modifier = 0.0;
-      largesize = 32;
+      largesize = 48;
       magnification = true;
       mineffect = "scale";
       minimize-to-application = true;
@@ -79,7 +79,6 @@ in {
       show-recents = false;
 
       persistent-apps = [
-        "/Users/${userId}/Applications/Home\ Manager\ Apps/WezTerm.app"
         "/System/Applications/Notes.app"
         "/System/Applications/Reminders.app"
         "/Applications/Zen\ Browser.app"
