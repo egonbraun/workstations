@@ -37,7 +37,7 @@ in {
 
   home.packages = with pkgs; [
     alejandra
-    devenv
+    devbox
     colima
     docker-client
     gh
