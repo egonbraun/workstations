@@ -19,8 +19,8 @@ with lib; {
 
       custom = {
         devbox = {
-          when = "test \"$DEVBOX_SHELL_ENABLED\" = \"1\"";
-          format = "[in devbox](yellow)";
+          when = "test -n \"$DEVENV_ROOT\"";
+          format = "[in devenv](yellow)";
         };
       };
 
