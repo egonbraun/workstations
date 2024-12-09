@@ -73,7 +73,7 @@ in {
     git.enable = true;
     home-manager.enable = true;
     jq.enable = true;
-    kitty.enabled = true;
+    kitty.enable = true;
     lazygit.enable = true;
     lsd.enable = true;
     neovim.enable = true;
