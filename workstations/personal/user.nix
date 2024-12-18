@@ -37,6 +37,8 @@ in {
 
   home.packages = with pkgs; [
     alejandra
+    awscli2
+    azure-cli
     devbox
     colima
     docker-client
