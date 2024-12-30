@@ -45,6 +45,7 @@ in {
     gh
     git-crypt
     go-task
+    sqlfluff
   ];
 
   home.shellAliases = {
