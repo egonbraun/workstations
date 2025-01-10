@@ -26,6 +26,10 @@ in {
   homebrew = {
     enable = true;
 
+    brews = [
+      "cdktf"
+    ];
+
     casks = [
       "1password-cli"
       "alfred"
