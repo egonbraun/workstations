@@ -27,6 +27,7 @@ in {
     enable = true;
 
     casks = [
+      "1password-cli"
       "alfred"
       "bartender"
       "discord"
