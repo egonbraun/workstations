@@ -9,5 +9,9 @@
     autosuggestion.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
+
+    initExtra = ''
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    '';
   };
 }
