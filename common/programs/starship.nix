@@ -9,6 +9,7 @@ with lib; {
     enableZshIntegration = true;
 
     settings = {
+      command_timeout = 1000;
       git_commit.tag_symbol = " tag ";
 
       character = {
@@ -19,7 +20,7 @@ with lib; {
 
       custom = {
         devbox = {
-          when = "test \"$DEVBOX_SHELL_ENABLED\" = \"1\"";
+          when = "test ! -z \"$DEVBOX_PROJECT_ROOT\"";
           format = "[in devbox](yellow)";
         };
       };
