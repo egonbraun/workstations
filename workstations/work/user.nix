@@ -42,6 +42,7 @@ in {
     docker-client
     gh
     git-crypt
+    glab
     go-task
     sqlfluff
   ];
@@ -117,10 +118,6 @@ in {
             user = {
               name = userName;
               email = "egon.braun@devolksbank.nl";
-            };
-
-            core = {
-              sshCommand = "ssh -i ~/.ssh/ssh-devolksbank-private-rsa";
             };
           };
         }
