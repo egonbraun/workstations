@@ -44,6 +44,7 @@ in {
     docker-client
     gh
     git-crypt
+    glab
     go-task
     sqlfluff
   ];
