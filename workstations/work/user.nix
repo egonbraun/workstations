@@ -44,7 +44,9 @@ in {
     git-crypt
     glab
     go-task
+    nodejs_22
     sqlfluff
+    tenv
   ];
 
   home.shellAliases = {
