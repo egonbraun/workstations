@@ -26,6 +26,10 @@ in {
   homebrew = {
     enable = true;
 
+    brews = [
+      "node"
+    ];
+
     casks = [
       "1password-cli"
       "alfred"
@@ -38,6 +42,7 @@ in {
       "rectangle-pro"
       "session-manager-plugin"
       "slack"
+      "spotify"
       "telegram"
       "visual-studio-code"
       "whatsapp"
@@ -75,6 +80,7 @@ in {
         "/System/Applications/Reminders.app"
         "/Applications/Zen\ Browser.app"
         "/Applications/Google\ Chrome\ Dev.app"
+        "/Applications/Spotify.app"
         "/Applications/Microsoft\ Outlook.app"
         "/Users/${userId}/Applications/Home\ Manager\ Apps/kitty.app"
         "/Applications/Visual\ Studio\ Code.app"
