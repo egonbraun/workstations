@@ -37,6 +37,8 @@ in {
 
   home.packages = with pkgs; [
     alejandra
+    awscli2
+    azure-cli
     devbox
     colima
     docker-client
@@ -81,6 +83,7 @@ in {
     lsd.enable = true;
     neovim.enable = true;
     ripgrep.enable = true;
+    ssh.enable = true;
     starship.enable = true;
     zoxide.enable = true;
     zsh.enable = true;

@@ -12,6 +12,7 @@
     ./kitty.nix
     ./lsd.nix
     ./neovim.nix
+    ./ssh.nix
     ./starship.nix
     ./zsh.nix
   ];
