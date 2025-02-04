@@ -166,6 +166,15 @@ in {
         }
       ];
     };
+
+    ssh = {
+      matchBlocks = {
+        aws-ssm-hosts = {
+          host = "i-* mi-*";
+          proxyCommand = "sh -c \"aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'\"";
+        };
+      };
+    };
   };
 
   services = {
