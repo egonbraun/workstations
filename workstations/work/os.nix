@@ -38,6 +38,7 @@ in {
       "google-chrome@dev"
       "gpg-suite-no-mail"
       "logi-options+"
+      "obsidian"
       "protonmail-bridge"
       "rectangle-pro"
       "session-manager-plugin"
@@ -76,8 +77,7 @@ in {
       show-recents = false;
 
       persistent-apps = [
-        "/System/Applications/Notes.app"
-        "/System/Applications/Reminders.app"
+        "/Applications/Obsidian.app"
         "/Applications/Zen\ Browser.app"
         "/Applications/Google\ Chrome\ Dev.app"
         "/Applications/Spotify.app"
