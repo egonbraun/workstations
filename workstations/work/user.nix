@@ -46,6 +46,8 @@ in {
     git-crypt
     glab
     go-task
+    pipenv
+    poetry
     sqlfluff
     tenv
   ];
@@ -82,6 +84,7 @@ in {
     lazygit.enable = true;
     lsd.enable = true;
     neovim.enable = true;
+    pyenv.enable = true;
     ripgrep.enable = true;
     ssh.enable = true;
     starship.enable = true;
