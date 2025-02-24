@@ -50,6 +50,7 @@ in {
     poetry
     sqlfluff
     tenv
+    uv
   ];
 
   home.shellAliases = {
