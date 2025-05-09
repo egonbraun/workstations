@@ -21,7 +21,7 @@ with lib; {
       custom = {
         devbox = {
           when = "test ! -z \"$DEVBOX_PROJECT_ROOT\"";
-          format = "[in devbox](yellow)";
+          format = "[in devbox](yellow) ";
         };
       };
 
@@ -30,6 +30,8 @@ with lib; {
         "$git_branch"
         "$git_status"
         "\${custom.devbox}"
+        "$golang"
+        "$python"
         "$line_break"
         "$character"
       ];
@@ -45,6 +47,14 @@ with lib; {
         diverged = "<>";
         renamed = "r";
         deleted = "x";
+      };
+
+      golang = {
+        symbol = "go ";
+      };
+
+      python = {
+        symbol = "py ";
       };
     };
   };

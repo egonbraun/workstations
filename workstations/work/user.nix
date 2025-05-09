@@ -59,15 +59,19 @@ in {
   };
 
   home.sessionPath = [
-    "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
     "$HOME/.local/bin"
+    "$HOME/.goenv/bin"
+    "$HOME/go/1.24.1/bin"
     ".git/safe/../../bin"
     ".venv/bin"
+    "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
   ];
 
   home.sessionVariables = {
     DEVBOX_NO_PROMPT = 1;
     EDITOR = "vim";
+    GOENV_ROOT = "$HOME/.goenv";
+    GOPATH = "$HOME/SourceCode";
     HOMEBREW_NO_ANALYTICS = 1;
     HOMEBREW_NO_ENV_HINTS = 1;
   };
@@ -135,23 +139,6 @@ in {
             user = {
               name = userName;
               email = "egon.braun@devolksbank.nl";
-            };
-
-            core = {
-              sshCommand = "ssh -i ~/.ssh/ssh-schubergphilis-private-rsa";
-            };
-          };
-        }
-        {
-          condition = "gitdir:~/SourceCode/github.com/sbpdvb/";
-          contents = {
-            user = {
-              name = userName;
-              email = userEmail;
-            };
-
-            core = {
-              sshCommand = "ssh -i ~/.ssh/ssh-schubergphilis-private-rsa";
             };
           };
         }
