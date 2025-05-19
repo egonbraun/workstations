@@ -34,7 +34,10 @@ in {
       output = json
     '';
 
-    ".local/bin/ssmconn".source = ./files/ssmconn;
+    ".local/bin/ec2conn" = {
+      executable = true;
+      source = ../../files/scripts/ec2conn;
+    };
   };
 
   home.packages = with pkgs; [

@@ -19,7 +19,7 @@ tasks:
       vars:
         - WORKSTATION
     cmds:
-      - nix run nix-darwin -- switch --flake ".#{{.WORKSTATION}}"
+      - sudo nix run nix-darwin -- switch --flake ".#{{.WORKSTATION}}"
   lint:
     label: Lint
     desc: Lints and formats the nix source code
