@@ -33,6 +33,8 @@ in {
       region = eu-central-1
       output = json
     '';
+
+    ".local/bin/ssmconn".source = ./files/ssmconn;
   };
 
   home.packages = with pkgs; [
@@ -49,6 +51,7 @@ in {
     pipenv
     poetry
     sqlfluff
+    sshuttle
     tenv
     uv
   ];
