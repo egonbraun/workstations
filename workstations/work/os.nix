@@ -23,38 +23,38 @@ in {
     ];
   };
 
-  homebrew = {
-    enable = true;
+  # homebrew = {
+  #   enable = true;
 
-    brews = [
-      "node"
-    ];
+  #   brews = [
+  #     "node"
+  #   ];
 
-    casks = [
-      "1password-cli"
-      "alfred"
-      "bartender"
-      "discord"
-      "google-chrome@dev"
-      "gpg-suite-no-mail"
-      "logi-options+"
-      "obsidian"
-      "protonmail-bridge"
-      "rectangle-pro"
-      "session-manager-plugin"
-      "slack"
-      "spotify"
-      "telegram"
-      "visual-studio-code"
-      "whatsapp"
-      "zen-browser"
-    ];
+  #   casks = [
+  #     "1password-cli"
+  #     "alfred"
+  #     "bartender"
+  #     "discord"
+  #     "google-chrome@dev"
+  #     "gpg-suite-no-mail"
+  #     "logi-options+"
+  #     "obsidian"
+  #     "protonmail-bridge"
+  #     "rectangle-pro"
+  #     "session-manager-plugin"
+  #     "slack"
+  #     "spotify"
+  #     "telegram"
+  #     "visual-studio-code"
+  #     "whatsapp"
+  #     "zen-browser"
+  #   ];
 
-    masApps = {
-      "HotKey App" = 975890633;
-      "reMarkable desktop" = 1276493162;
-    };
-  };
+  #   masApps = {
+  #     "HotKey App" = 975890633;
+  #     "reMarkable desktop" = 1276493162;
+  #   };
+  # };
 
   services = {
   };
@@ -78,7 +78,7 @@ in {
 
       persistent-apps = [
         "/Applications/Obsidian.app"
-        "/Applications/Zen\ Browser.app"
+        "/Applications/Zen.app"
         "/Applications/Google\ Chrome\ Dev.app"
         "/Applications/Spotify.app"
         "/System/Applications/Mail.app"

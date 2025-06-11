@@ -167,8 +167,8 @@ in {
     ssh = {
       matchBlocks = {
         aws-ssm-hosts = {
-          host = "i-* mi-*";
-          proxyCommand = "sh -c \"aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'\"";
+          host = "i-* mi-* aws-* ec2-*.compute.amazonaws.com ip-*.compute.internal";
+          proxyCommand = "ec2conn -h %h -u %r -p %p";
         };
       };
     };

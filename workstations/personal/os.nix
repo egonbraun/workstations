@@ -85,7 +85,7 @@ in {
 
       persistent-apps = [
         "/Applications/Obsidian.app"
-        "/Applications/Zen\ Browser.app"
+        "/Applications/Zen.app"
         "/Applications/Google\ Chrome\ Dev.app"
         "/System/Applications/Mail.app"
         "/System/Applications/Calendar.app"
