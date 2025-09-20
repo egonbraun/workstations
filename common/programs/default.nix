@@ -9,7 +9,6 @@
     ./direnv.nix
     ./fd.nix
     ./git.nix
-    ./kitty.nix
     ./lsd.nix
     ./neovim.nix
     ./pyenv.nix

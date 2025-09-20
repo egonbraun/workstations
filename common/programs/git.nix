@@ -50,6 +50,7 @@ in {
       };
 
       push = {
+        autoSetupRemote = true;
         default = "simple";
         followTags = true;
       };

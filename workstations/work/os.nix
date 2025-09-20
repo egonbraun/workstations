@@ -23,39 +23,6 @@ in {
     ];
   };
 
-  # homebrew = {
-  #   enable = true;
-
-  #   brews = [
-  #     "node"
-  #   ];
-
-  #   casks = [
-  #     "1password-cli"
-  #     "alfred"
-  #     "bartender"
-  #     "discord"
-  #     "google-chrome@dev"
-  #     "gpg-suite-no-mail"
-  #     "logi-options+"
-  #     "obsidian"
-  #     "protonmail-bridge"
-  #     "rectangle-pro"
-  #     "session-manager-plugin"
-  #     "slack"
-  #     "spotify"
-  #     "telegram"
-  #     "visual-studio-code"
-  #     "whatsapp"
-  #     "zen-browser"
-  #   ];
-
-  #   masApps = {
-  #     "HotKey App" = 975890633;
-  #     "reMarkable desktop" = 1276493162;
-  #   };
-  # };
-
   services = {
   };
 
@@ -83,7 +50,7 @@ in {
         "/Applications/Spotify.app"
         "/System/Applications/Mail.app"
         "/System/Applications/Calendar.app"
-        "/Users/${userId}/Applications/Home\ Manager\ Apps/kitty.app"
+        "/Applications/Ghostty.app"
         "/Applications/Visual\ Studio\ Code.app"
         "/Applications/Xcode.app"
         "/Applications/Slack.app"
@@ -92,6 +59,7 @@ in {
         "/Applications/Telegram.app"
         "/Applications/Discord.app"
         "/Applications/1Password.app"
+        "/Applications/reMarkable.app"
         "/Applications/Windows\ App.app"
         "/Applications/Cisco/Cisco\ Secure\ Client.app"
         "/Applications/Ivanti\ Secure\ Access.app"

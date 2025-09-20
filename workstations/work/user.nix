@@ -28,11 +28,9 @@ in {
   home.file = {
     ".hushlogin".text = "";
 
-    ".aws/config".text = ''
-      [default]
-      region = eu-central-1
-      output = json
-    '';
+    ".config/ghostty/config" = {
+      source = ../../files/ghostty/config;
+    };
 
     ".local/bin/ec2conn" = {
       executable = true;
@@ -51,15 +49,13 @@ in {
     git-crypt
     glab
     go-task
-    pipenv
-    poetry
     sqlfluff
-    sshuttle
     tenv
     uv
   ];
 
   home.shellAliases = {
+    "assume" = "source /opt/homebrew/bin/assume";
     "dig" = "dig +search +noall +answer +question";
     "dig-all" = "dig +all";
   };
