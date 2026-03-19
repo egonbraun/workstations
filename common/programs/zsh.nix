@@ -13,6 +13,7 @@
     initExtra = ''
       eval "$(/opt/homebrew/bin/brew shellenv)"
       eval "$(goenv init -)"
+      eval "$(pyenv init - zsh)"
     '';
   };
 }

@@ -41,8 +41,6 @@ in {
   home.packages = with pkgs; [
     alejandra
     awscli2
-    azure-cli
-    devbox
     colima
     docker-client
     gh
@@ -67,6 +65,8 @@ in {
     ".git/safe/../../bin"
     ".venv/bin"
     "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+    "$PYENV_ROOT/bin"
+    "$N_PREFIX/bin"
   ];
 
   home.sessionVariables = {
@@ -76,6 +76,8 @@ in {
     GOPATH = "$HOME/SourceCode";
     HOMEBREW_NO_ANALYTICS = 1;
     HOMEBREW_NO_ENV_HINTS = 1;
+    N_PREFIX = "$HOME/.local/share/n";
+    PYENV_ROOT = "$HOME/.pyenv";
   };
 
   programs = {
@@ -91,7 +93,6 @@ in {
     lazygit.enable = true;
     lsd.enable = true;
     neovim.enable = true;
-    pyenv.enable = true;
     ripgrep.enable = true;
     ssh.enable = true;
     starship.enable = true;
