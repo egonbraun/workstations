@@ -31,11 +31,6 @@ in {
     ".config/ghostty/config" = {
       source = ../../files/ghostty/config;
     };
-
-    ".local/bin/ec2conn" = {
-      executable = true;
-      source = ../../files/scripts/ec2conn;
-    };
   };
 
   home.packages = with pkgs; [
@@ -89,7 +84,6 @@ in {
     git.enable = true;
     home-manager.enable = true;
     jq.enable = true;
-    kitty.enable = true;
     lazygit.enable = true;
     lsd.enable = true;
     neovim.enable = true;

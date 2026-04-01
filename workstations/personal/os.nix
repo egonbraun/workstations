@@ -23,46 +23,6 @@ in {
     ];
   };
 
-  homebrew = {
-    enable = true;
-
-    brews = [
-      "cdktf"
-    ];
-
-    casks = [
-      "alfred"
-      "bartender"
-      "discord"
-      "elgato-control-center"
-      "elgato-stream-deck"
-      "figma"
-      "google-chrome@dev"
-      "gpg-suite-no-mail"
-      "logi-options+"
-      "loopback"
-      "obs"
-      "obsidian"
-      "protonvpn"
-      "protonmail-bridge"
-      "rectangle-pro"
-      "session-manager-plugin"
-      "telegram"
-      "visual-studio-code"
-      "whatsapp"
-      "zen-browser"
-    ];
-
-    masApps = {
-      "Affinity Designer 2" = 1616831348;
-      "HotKey App" = 975890633;
-      "reMarkable desktop" = 1276493162;
-      "System Color Picker" = 1545870783;
-      "Xcode" = 497799835;
-      "Logic Pro" = 634148309;
-    };
-  };
-
   services = {
   };
 
@@ -85,17 +45,21 @@ in {
 
       persistent-apps = [
         "/Applications/Obsidian.app"
-        "/Applications/Zen.app"
+        "/Applications/Zen\ Browser.app"
         "/Applications/Google\ Chrome\ Dev.app"
         "/System/Applications/Mail.app"
         "/System/Applications/Calendar.app"
-        "/Users/${userId}/Applications/Home\ Manager\ Apps/kitty.app"
+        "/Applications/Ghostty.app"
         "/Applications/Visual\ Studio\ Code.app"
+        "/Applications/Unity/Hub/Editor/6000.2.5f1/Unity.app"
         "/Applications/Xcode.app"
         "/Applications/Figma.app"
         "/Applications/Affinity Designer 2.app"
         "/Applications/OBS.app"
+        "/Applications/DaVinci\ Resolve.app"
         "/Applications/Logic Pro.app"
+        "/Applications/Loopback.app"
+        "/Applications/reMarkable.app"
         "/Applications/WhatsApp.app"
         "/Applications/Telegram.app"
         "/Applications/Discord.app"

@@ -6,6 +6,7 @@
   ...
 }: let
   args = specialArgs.workstationArgs;
+  secrets = args.secrets;
   systemRole = args.system.role;
   userEmail = args.user.email;
   userId = args.user.id;
@@ -28,25 +29,17 @@ in {
   home.file = {
     ".hushlogin".text = "";
 
-    ".aws/config".text = ''
-      [default]
-      region = eu-central-1
-      output = json
-    '';
+    ".config/ghostty/config" = {
+      source = ../../files/ghostty/config;
+    };
   };
 
   home.packages = with pkgs; [
-    alejandra
     awscli2
-    azure-cli
-    devbox
-    colima
-    docker-client
     gh
     git-crypt
     glab
     go-task
-    sqlfluff
   ];
 
   home.shellAliases = {
@@ -66,6 +59,7 @@ in {
     EDITOR = "vim";
     HOMEBREW_NO_ANALYTICS = 1;
     HOMEBREW_NO_ENV_HINTS = 1;
+    ANTHROPIC_API_KEY = secrets.anthropic_api_key;
   };
 
   programs = {
@@ -77,10 +71,10 @@ in {
     git.enable = true;
     home-manager.enable = true;
     jq.enable = true;
-    kitty.enable = true;
     lazygit.enable = true;
     lsd.enable = true;
     neovim.enable = true;
+    pyenv.enable = true;
     ripgrep.enable = true;
     starship.enable = true;
     zoxide.enable = true;

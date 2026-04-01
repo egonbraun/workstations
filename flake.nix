@@ -4,22 +4,6 @@
   inputs = {
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
-    # nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-
-    # homebrew-bundle = {
-    #   url = "github:homebrew/homebrew-bundle";
-    #   flake = false;
-    # };
-
-    # homebrew-cask = {
-    #   url = "github:homebrew/homebrew-cask";
-    #   flake = false;
-    # };
-
-    # homebrew-core = {
-    #   url = "github:homebrew/homebrew-core";
-    #   flake = false;
-    # };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -35,12 +19,8 @@
   outputs = {
     self,
     nix-darwin,
-    # nix-homebrew,
     nixpkgs,
     home-manager,
-    # homebrew-bundle,
-    # homebrew-cask,
-    # homebrew-core,
     ...
   } @ inputs: let
     defaultConfiguration = {
@@ -86,23 +66,6 @@
                 };
               };
             }
-
-            # nix-homebrew.darwinModules.nix-homebrew
-            # {
-            #   nix-homebrew = {
-            #     enable = true;
-            #     autoMigrate = true;
-            #     enableRosetta = true;
-            #     mutableTaps = true;
-            #     user = "${args.user.id}";
-
-            #     taps = {
-            #       "homebrew/homebrew-bundle" = homebrew-bundle;
-            #       "homebrew/homebrew-core" = homebrew-core;
-            #       "homebrew/homebrew-cask" = homebrew-cask;
-            #     };
-            #   };
-            # }
           ]
           ++ args.extraModules;
       };
