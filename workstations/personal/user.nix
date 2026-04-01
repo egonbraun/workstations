@@ -55,11 +55,11 @@ in {
   ];
 
   home.sessionVariables = {
+    ANTHROPIC_API_KEY = secrets.anthropic_api_key;
     DEVBOX_NO_PROMPT = 1;
     EDITOR = "vim";
     HOMEBREW_NO_ANALYTICS = 1;
     HOMEBREW_NO_ENV_HINTS = 1;
-    ANTHROPIC_API_KEY = secrets.anthropic_api_key;
   };
 
   programs = {
