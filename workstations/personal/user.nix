@@ -6,7 +6,6 @@
   ...
 }: let
   args = specialArgs.workstationArgs;
-  secrets = args.secrets;
   systemRole = args.system.role;
   userEmail = args.user.email;
   userId = args.user.id;
@@ -55,7 +54,6 @@ in {
   ];
 
   home.sessionVariables = {
-    ANTHROPIC_API_KEY = secrets.anthropic_api_key;
     DEVBOX_NO_PROMPT = 1;
     EDITOR = "vim";
     HOMEBREW_NO_ANALYTICS = 1;
